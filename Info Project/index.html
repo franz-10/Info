@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="center" style="font-size: 50px; color: crimson;">
+        Film Bibliothek
+    </h1>
+
+    <br><br>
+
+    <h1>Movie Finder</h1>
+    <input type="text" id="searchInput" onkeyup="searchMovies()" placeholder="Search for a movie..." />
+    
+
+    <ul id="movieList">
+        <li><a href="/Info Project/Filme/Shrek.html">Shrek</a></li>
+        <li><a href="/Info Project/Filme/Deadpool-and-Wolverine.html">Deadpool and Wolverine</a></li>
+        <li><a href="/Info Project/Filme/Minions.html">Minions(2015)</a></li>
+        <li><a href="/Info Project/Filme/Forest-Gump.html">Forest Gump</a></li>
+        <li><a href="/Info Project/Filme/The-Life-of-Brian.html">The Life of Brian</a></li>
+    </ul>
+    
+    <script>
+        function searchMovies() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const movieList = document.getElementById('movieList');
+    const movies = movieList.getElementsByTagName('li');
+  
+    for (let i = 0; i < movies.length; i++) {
+      const movie = movies[i];
+      if (movie.textContent.toLowerCase().includes(input)) {
+        movie.style.display = '';
+      } else {
+        movie.style.display = 'none';
+      }
+    }
+  }
+  
+    </script>
+</body>
+</html>
